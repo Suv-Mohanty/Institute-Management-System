@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+      <div class="container-fluid" style="justify-content: center;display: flex;">
+        <div class="row">
+          <div class="col-md-3 pt-2 ml-5" style="margin-top:120px;box-shadow: 0px 0px 10px white;height:250px;">
+            <form method="POST">
+              {% csrf_token %}
+              <input type="text" name="fname" class="form-control" placeholder="Full Name">
+              <input type="email" name="email" class="form-control" placeholder="Email">
+              <input type="number" name="mobile" class="form-control" placeholder="Mobile Number">
+              <input type="text" name="cname" class="form-control" placeholder="Course">
+              <input type="number" name="pass" class="form-control" placeholder="Passed Out Year">
+              <center>
+                <input type="submit" name="Submit" class="btn btn-success mt-2">
+                <input type="reset" name="Clear" class="btn btn-danger mt-2">
+              </center>
+            </form>
+          </div>
+
+          <div class="col-md-3">
+            <img src="{% static 'images/loc.png' %}" style="border-radius: 10%;box-shadow: 0px 0px 10px white;height:200px;width:200px;margin:165px;">
+          </div>
+
+          <div class="col-md-4">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15559.76658372282!2d77.65379!3d12.847045549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6b62747ab39b%3A0xa02ad6247c4deb3d!2sDoddathoguru%2C%20Karnataka%20560100!5e0!3m2!1sen!2sin!4v1678951943103!5m2!1sen!2sin" width="500" height="400" style="margin-top:50px;margin-left:150px;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>

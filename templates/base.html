@@ -1,0 +1,14 @@
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body style="background-image:url('{% static 'images/base.jpg' %}');background-size:cover;">
+    {% include 'navbar.html' %}
+    {% block content %}
+    {% endblock %}
+    <h2 class="text-center text-white mt-3">Thank You</h2>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title></title>
+    {% include 'cdnlines.html' %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  </head>
+  <style media="screen">
+      body{
+        background-color: #f0f2f5;
+        background-size:cover;
+        background-position:center;
+      }
+
+    form{
+        box-shadow: 0px 0px 10px #e4e6eb,0px 0px 10px #e4e6eb;
+        padding:10px;
+        background-color: white;
+        border-radius: 3%;
+    }
+  </style>
+  <body>
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="offset-4 col-md-4">
+          <form method="POST">
+            {% csrf_token %}
+            <h3 class="text-center" style="color: gray;">Login Below</h3>
+            <label style="color: gray;">Username</label>
+            <input type="text" name="username" class="form-control">
+            <label style="color: gray;">Password</label>
+            <input type="password" name="password" class="form-control" id="myInput"><br>
+            <input type="checkbox" onclick="myFunction()"  style="color: gray;"> Show Password
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+            <center>
+            <input type="submit" value="Login" class="btn btn-outline-success mt-2">
+            <input type="reset" value="Cancel" class="btn btn-outline-danger mt-2"><br>
+            <a href="{% url 'register' %}" class="btn btn-outline-primary mt-2">Sign Up Now</a>
+            </center>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
